@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp 
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" 
+  xsi:type="TaskPaneApp">
+  
+  <Id>af4cdfb9-7ffc-4829-9ff3-4802127bb7f5</Id>
+  <Version>0.0.9</Version>
+  <ProviderName>Arbi</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="ARBI v0.0.9"/>
+  <Description DefaultValue="AI-powered text assistant"/>
+  <IconUrl DefaultValue="https://arbicity.com/arbi32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://arbicity.com/arbi80.png"/>
+  <SupportUrl DefaultValue="https://arbi.city/page/support"/>
+  
+  <AppDomains>
+    <AppDomain>https://box-201.arbibox.com</AppDomain>
+    <AppDomain>https://arbibox.com</AppDomain>
+  </AppDomains>
+  
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  
+  <Requirements>
+    <Sets DefaultMinVersion="1.1">
+      <Set Name="WordApi" MinVersion="1.1"/>
+      <Set Name="ContextMenuApi" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://box-201.arbibox.com/api/word"/>
+  </DefaultSettings>
+  
+  <Permissions>ReadWriteDocument</Permissions>
+  
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <FunctionFile resid="Commands.Url"/>
+          <!-- Ribbon button to open taskpane -->
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="ArbiGroup">
+                <Label resid="ArbiGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="ArbiTaskpaneButton">
+                  <Label resid="ArbiTaskpane.Label"/>
+                  <Supertip>
+                    <Title resid="ArbiTaskpane.Title"/>
+                    <Description resid="ArbiTaskpane.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ArbiTaskpane</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+          <!-- Context menu -->
+          <ExtensionPoint xsi:type="ContextMenu">
+            <OfficeMenu id="ContextMenuText">
+              <Control xsi:type="Button" id="SummarizeButton">
+                <Label resid="SummarizeButton.Label"/>
+                <Supertip>
+                  <Title resid="SummarizeButton.Label"/>
+                  <Description resid="SummarizeButton.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>summarizeSelectedText</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="GetCitationsButton">
+                <Label resid="GetCitationsButton.Label"/>
+                <Supertip>
+                  <Title resid="GetCitationsButton.Label"/>
+                  <Description resid="GetCitationsButton.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>getCitationsForText</FunctionName>
+                </Action>
+              </Control>
+              <Control xsi:type="Button" id="AutoCompleteButton">
+                <Label resid="AutoCompleteButton.Label"/>
+                <Supertip>
+                  <Title resid="AutoCompleteButton.Label"/>
+                  <Description resid="AutoCompleteButton.Tooltip"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                  <FunctionName>continueDrafting</FunctionName>
+                </Action>
+              </Control>
+            </OfficeMenu>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://arbicity.com/arbi16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://arbicity.com/arbi32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://arbicity.com/arbi80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://box-201.arbibox.com/api/word/commands"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://box-201.arbibox.com/api/word"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="ArbiGroup.Label" DefaultValue="ARBI"/>
+        <bt:String id="ArbiTaskpane.Label" DefaultValue="AI Assistant"/>
+        <bt:String id="ArbiTaskpane.Title" DefaultValue="ARBI Settings"/>
+        <bt:String id="ContextMenu.Label" DefaultValue="ARBI"/>
+        <bt:String id="SummarizeButton.Label" DefaultValue="Summarise"/>
+        <bt:String id="GetCitationsButton.Label" DefaultValue="Get Cites"/>
+        <bt:String id="AutoCompleteButton.Label" DefaultValue="AutoComplete"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="ArbiTaskpane.Tooltip" DefaultValue="Open ARBI taskpane for login and settings"/>
+        <bt:String id="ContextMenu.Tooltip" DefaultValue="AI-powered text tools"/>
+        <bt:String id="SummarizeButton.Tooltip" DefaultValue="Summarise selected text"/>
+        <bt:String id="GetCitationsButton.Tooltip" DefaultValue="Find citations for selected text"/>
+        <bt:String id="AutoCompleteButton.Tooltip" DefaultValue="Continue writing from cursor position"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
