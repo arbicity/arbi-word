@@ -7,11 +7,11 @@
   xsi:type="TaskPaneApp">
   
   <Id>af4cdfb9-7ffc-4829-9ff3-4802127bb7f5</Id>
-  <Version>0.0.9</Version>
+  <Version>0.0.10</Version>
   <ProviderName>Arbi</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="ARBI v0.0.9"/>
-  <Description DefaultValue="AI-powered text assistant"/>
+  <DisplayName DefaultValue="ARBI v0.0.10"/>
+  <Description DefaultValue="AI-powered writing assistant for Word"/>
   <IconUrl DefaultValue="https://arbicity.com/arbi32.png"/>
   <HighResolutionIconUrl DefaultValue="https://arbicity.com/arbi80.png"/>
   <SupportUrl DefaultValue="https://arbi.city/page/support"/>
