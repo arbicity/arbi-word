@@ -7,10 +7,10 @@
   xsi:type="TaskPaneApp">
   
   <Id>bf4cdfb9-7ffc-4829-9ff3-4802127bb7f5</Id>
-  <Version>0.0.2</Version>
+  <Version>0.0.3</Version>
   <ProviderName>Arbi</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="ARBI 201 v0.0.2"/>
+  <DisplayName DefaultValue="ARBI 201 v0.0.3"/>
   <Description DefaultValue="AI-powered writing assistant"/>
   <IconUrl DefaultValue="https://arbicity.com/arbi32.png"/>
   <HighResolutionIconUrl DefaultValue="https://arbicity.com/arbi80.png"/>
