@@ -12,7 +12,7 @@ AI-powered assistant for Microsoft Word that helps you write, summarize, and imp
 
 ### Quick Install
 
-1. Download the manifest: [arbi-word-addin.xml](https://raw.githubusercontent.com/YOUR_ORG/arbi-word/main/arbi-word-addin.xml)
+1. Download the manifest: [arbi-word-addin.xml](https://raw.githubusercontent.com/arbitrationcity/arbi-word/main/arbi-word-addin.xml)
 2. Open Word (Desktop or Online)
 3. Go to **Insert → Add-ins → My Add-ins**
 4. Click **Upload My Add-in**
@@ -31,17 +31,17 @@ AI-powered assistant for Microsoft Word that helps you write, summarize, and imp
 
 - Microsoft Word (Office 365, Word Online, or Word 2016+)
 - Internet connection
-- ARBI account (create at [arbi.city](https://arbi.city))
+- ARBI account (create at [arbicity.com](https://arbicity.com))
 
 ## Versions
 
-- **Latest**: Always use [arbi-word-addin.xml](https://raw.githubusercontent.com/YOUR_ORG/arbi-word/main/arbi-word-addin.xml)
-- **Specific versions**: See [Releases](https://github.com/YOUR_ORG/arbi-word/releases)
+- **Latest**: Always use [arbi-word-addin.xml](https://raw.githubusercontent.com/arbitrationcity/arbi-word/main/arbi-word-addin.xml)
+- **Specific versions**: See [Releases](https://github.com/arbitrationcity/arbi-word/releases)
 
 ## Support
 
 - Documentation: [arbi.city/page/support](https://arbi.city/page/support)
-- Issues: [GitHub Issues](https://github.com/YOUR_ORG/arbi-word/issues)
+- Issues: [GitHub Issues](https://github.com/arbitrationcity/arbi-word/issues)
 
 ## Privacy
 
